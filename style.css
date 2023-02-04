@@ -58,14 +58,14 @@ body{
 header{
   height: 6.5rem;
   background-color: #fff;
-  border-bottom: 1px solid #8b8b8b;
+  border-bottom: 1px solid gainsboro;
 
 
 }
 footer{
   height: 6.5rem;
   background-color: #fff;
-  border-top: 1px solid #8b8b8b;
+  border-top: 1px solid gainsboro;
 
 }
 .container{
@@ -82,7 +82,7 @@ footer{
   grid-area: 1 / 1 / 2 / 2;
   background-color: #fff;
   height: 80.7rem;
-  border-right: 1px solid #8b8b8b;
+  border-right: 1px solid gainsboro;
 }
 
 .container-mid{
@@ -104,6 +104,6 @@ footer{
 .container-rigth{
   background-color: #fff;
   grid-area: 1 / 3 / 2 / 4;
-  border-left: 1px solid #8b8b8b;
+  border-left: 1px solid gainsboro;
 
 }
