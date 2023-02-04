@@ -14,10 +14,55 @@
   <main>
     <div class="container">
       <div class="container-left">
+        <h3>Customize Shadow</h3>
+        <div class="container-controls">
+        <div class="form-control">
+          <div class="reference-input">
+            <label class="title"  for="horizontal">Horizontal offset</label>
+            <input class="horizontalValue value" type="text" class="value" id="horizontal-value" name="horizontal-valeu">
+            <label  for="px">px</label>
+          </div>
+          <div class="range-input">
+            <input type="range" class="slider" id="horizontal" name="horizontal" min="-100" max="100" value="0">
+          </div>
+        </div>
+        <div class="form-control">
+          <div class="reference-input">
+            <label class="title"  for="vertical">Vertical offset</label>
+            <input class="verticalValue value" type="text" class="value" id="vertical-value" name="vertical-valeu">
+            <label  for="px">px</label>
+          </div>
+          <div class="range-input">
+            <input type="range" class="slider" id="vertical" name="vertical" min="-100" max="100" value="10">
+          </div>
+        </div>
+        <div class="form-control">
+          <div class="reference-input">
+            <label class="title"  for="blur">Blur radius</label>
+            <input class="blurValue value" type="text" class="value" id="blur-value" name="blur-valeu">
+            <label  for="px">px</label>
+          </div>
+          <div class="range-input">
+            <input type="range" class="slider" id="blur" name="blur" min="0" max="100" value="15">
+          </div>
+        </div>
+        <div class="form-control">
+          <div class="reference-input">
+            <label class="title"  for="spread">Spread radius</label>
+            <input class="spreadValue value" type="text" class="value" id="spread-value" name="spread-valeu">
+            <label  for="px">px</label>
+          </div>
+          <div class="range-input">
+            <input type="range" class="slider" id="spread" name="spread" min="-100" max="100" value="-3">
+          </div>
+          
+        </div>
+
+        </div>
         
       </div>
       <div class="container-mid">
-        <div class="object">
+        <div id="objetcPreview" class="object">
           
         </div>
       </div>
@@ -30,6 +75,6 @@
   <footer>
     logo
   </footer>
-  
+  <script src="index.js"></script>
 </body>
 </html>
