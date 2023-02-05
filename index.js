@@ -1,3 +1,62 @@
+class BorderRadiusgenerator{
+  constructor(all,rtop,rbot,ltop,lbot,allref,rtopref,rbotref,ltopref,lbotref,boxPreview){
+    this.all = all;
+    this.rtop = rtop;
+    this.rbot = rbot;
+    this.ltop = ltop;
+    this.lbot = lbot;
+    this.allref = allref;
+    this.rtopref = rtopref;
+    this.rbotref = rbotref;
+    this.ltopref = ltopref;
+    this.lbotref = lbotref;
+    this.boxPreview = boxPreview;
+    
+  }
+
+  initialize(){
+    this.allref.value = this.all.value;
+    this.rtopref.value = this.rtop.value;
+    this.rbotref.value = this.rbot.value;
+    this.ltopref.value = this.ltop.value;
+    this.lbotref.value = this.lbot.value;
+
+    this.applyEfect()
+  }
+
+  applyEfect(){
+    if (this.allref.value != 0){
+      this.boxPreview.style.borderRadius = `${this.allref.value}px`;
+    }else{
+      this.boxPreview.style.borderRadius = `${this.ltopref.value}px ${this.rtopref.value}px ${this.lbotref.value}px ${this.rbotref.value}px`;
+    }
+   
+  }
+
+  updateValue(type, value){
+    switch (type) {
+      case "all":
+        this.allref.value = value;
+        break;
+      case "ltop":
+        this.ltopref.value = value;
+        break;
+      case "rtop":
+        this.rtopref.value = value;
+        break;
+      case "lbot":
+        this.lbotref.value = value;
+        break;
+      case "rbot":
+        this.rbotref.value = value;
+        break;
+    }
+    this.applyEfect()
+
+  }
+
+
+}
 class Boxshadowgenerator{
   constructor(horizontal, horizontalref, vertical, verticalref, blur, blurref, spread, spreadref, boxPreview){
     this.horizontal = horizontal;
@@ -55,10 +114,23 @@ const spread = document.querySelector("#spread");
 const spreadref = document.querySelector("#spread-value");
 const boxPreview = document.querySelector("#objetcPreview");
 
+const all = document.querySelector("#all");
+const rtop = document.querySelector("#r-top");
+const ltop = document.querySelector("#l-top");
+const rbot = document.querySelector("#r-bot");
+const lbot = document.querySelector("#l-bot");
+const allref = document.querySelector("#allref");
+const rtopref = document.querySelector("#r-topref");
+const ltopref = document.querySelector("#l-topref");
+const rbotref = document.querySelector("#r-botref");
+const lbotref = document.querySelector("#l-botref");
+
 
 const boxShadow = new Boxshadowgenerator(horizontal, horizontalref, vertical, verticalref,blur,blurref,spread,spreadref,boxPreview);
+const borderRadius = new BorderRadiusgenerator(all,rtop,rbot,ltop,lbot,allref,rtopref,rbotref,ltopref,lbotref,boxPreview);
 
 boxShadow.initialize()
+borderRadius.initialize()
 
 horizontal.addEventListener("input", (e)=>{
   const value = e.target.value
@@ -76,3 +148,25 @@ spread.addEventListener("input", (e)=>{
   const value = e.target.value
   boxShadow.updateValue("spread",value)
 });
+
+all.addEventListener("input", (e)=>{
+  const value = e.target.value
+  borderRadius.updateValue("all",value)
+});
+ltop.addEventListener("input", (e)=>{
+  const value = e.target.value
+  borderRadius.updateValue("ltop",value)
+});
+rtop.addEventListener("input", (e)=>{
+  const value = e.target.value
+  borderRadius.updateValue("rtop",value)
+});
+lbot.addEventListener("input", (e)=>{
+  const value = e.target.value
+  borderRadius.updateValue("lbot",value)
+});
+rbot.addEventListener("input", (e)=>{
+  const value = e.target.value
+  borderRadius.updateValue("rbot",value)
+});
+
